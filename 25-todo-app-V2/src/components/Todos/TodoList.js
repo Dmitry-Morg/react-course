@@ -1,9 +1,9 @@
 import Todo from "./Todo";
-function TodoList({ todos, removeTodo }) {
+function TodoList({ todos, deleteTodo,toggleTodoHandler }) {
   return (
     <>
       {todos.length > 0 ? (
-        todos.map((todo, index) => <Todo onRemove={removeTodo} index={index} key={index} text={todo} />)
+        todos.map((todo) => <Todo deleteTodo={deleteTodo} key={todo.id} todo={todo} toggleTodoHandler={toggleTodoHandler} />)
       ) : (
         <h2>Todo list is empty</h2>
       )}
