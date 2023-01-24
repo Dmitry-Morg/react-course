@@ -1,0 +1,38 @@
+.todo {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 15px 0;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  background-color: #fbfef9;
+  color: #112d49;
+  border: 2px solid #555;
+}
+
+.todoText {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.todoTextCompleted {
+  text-decoration: line-through;
+}
+
+.todoButton {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: red;
+}
+
+.todoIcon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  color: teal;
+}
