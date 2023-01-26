@@ -5,7 +5,7 @@ import Todo from "./components/Todos/Todo";
 
 function App() {
   const [todos,setTodos] = useState([])
-  const addTodo = (text,status ) => {
+  const addTodo = (text,status) => {
     const newTask = {
       text: text,
       status: status,
@@ -18,9 +18,27 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id))
   }
 
-  const progressTodo = (status) => {
-    setTodos(todos.filter((todo) => todo.status === status))
-  }
+ const handlerProgress = (id) => {
+  setTodos(
+    todos.map((todo) => 
+    todo.id === id 
+      ? {...todo, status: todo.status === "NEW" ? "IN_PROGRESS" : "NEW"}
+      :
+      {...todo}
+    )
+  )
+ }
+
+ const handlerDone = (id) => {
+  setTodos(
+    todos.map((todo) => 
+    todo.id === id ?
+    {...todo, status: "DONE"}
+    :
+    {...todo}
+    )
+  )
+ }
   console.log(todos)
   return (
     <div className="App">
@@ -28,7 +46,8 @@ function App() {
       addTodo={addTodo}
       todos={todos}
       removeTodo={removeTodo}
-      progressTodo={progressTodo}
+      handlerProgress={handlerProgress}
+      handlerDone={handlerDone}
       />
     </div>
   );
