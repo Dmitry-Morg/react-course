@@ -1,31 +1,43 @@
 import styles from "./TodoItem.module.css"
-import {RiCloseFill} from "react-icons/ri"
-import {BsFillPlayFill} from "react-icons/bs"
-import {BiSquareRounded} from "react-icons/bi"
-import {MdDone} from "react-icons/md"
 import CheckBox from "../UI/CheckBox"
+import {MdDone} from "react-icons/md"
+import {RiCloseFill} from "react-icons/ri"
 import CheckBoxCircle from "../UI/CheckBoxCircle"
-
-function TodoItem({todo, removeTodo, handlerProgress}) {
-  return (
+import {BiSquareRounded} from "react-icons/bi"
+import {BsFillPlayFill} from "react-icons/bs"
+function TodoItem({todos,todo, removeTodo, handlerProgress, handlerDone}) {
+ 
+return (
     <div className={styles.todoItemContainer}>
-      <CheckBox
-        onClick
-        className={styles.checkBox}>
+
+       <CheckBox onClick={() => handlerDone(todo.id)}>
+        {todo.status === "DONE" ? <MdDone /> : ''}
       </CheckBox>
-
-      <span className={styles.todoItemText}>{todo.text}</span>
-
+      <span className={todo.status === "DONE" ? `${styles.todoItemTextDone}` : `${styles.todoItemText}`}>{todo.text}</span>
+      {todo.status === "DONE" 
+        ? 
+       ''
+      :
       <CheckBoxCircle
-        onClick={() => handlerProgress(todo.id)}
-        className={styles.checkBox}>
-        {todo.status === "NEW" ? <BsFillPlayFill /> : <BiSquareRounded />}
-      </CheckBoxCircle>
-
+      onClick={() => handlerProgress(todo.id)}
+      className={styles.checkBox}>
+      {todo.status === "IN_PROGRESS" ? <BiSquareRounded /> : <BsFillPlayFill />}
+    </CheckBoxCircle> 
+      }
       <CheckBox onClick={() => removeTodo(todo.id)}>
         <RiCloseFill/>
       </CheckBox>
+      {/* <StatusDone
+     todo={todo}
+     todos={todos}
+     removeTodo={removeTodo}
+     handlerDone={handlerDone}
+     handlerProgress={handlerProgress}
+   />  */}
     </div>
-  )
+)
+
+
+
 }
 export default TodoItem

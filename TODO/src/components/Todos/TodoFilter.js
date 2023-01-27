@@ -2,11 +2,17 @@ import styles from "./TodoFilter.module.css"
 import TodoSearch from "./TodoSearch"
 import TodoShow from "./TodoShow"
 
-function TodoFilter() {
+function TodoFilter({filtered, searchText, setSearchText,todoFilter}) {
   return (
     <div className={styles.todoFilterContainer}>
-      <TodoSearch />
-      <TodoShow />
+      <TodoSearch
+      setSearchText={setSearchText}
+      searchText={searchText}
+       />
+      <TodoShow 
+      filtered={filtered}
+      todoFilter={todoFilter}
+      />
     </div>
   )
 }
