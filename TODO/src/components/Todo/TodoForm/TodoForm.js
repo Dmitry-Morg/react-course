@@ -1,5 +1,5 @@
 import styles from "./TodoForm.module.css";
-import Input from "../../UI/Input/Input";
+import Input from "../../UI/Input";
 import Button from "../../UI/Button/Button";
 import { useState } from "react";
 function TodoForm({ addTodo }) {

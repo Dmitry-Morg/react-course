@@ -1,5 +1,5 @@
 import styles from "./TodoSearch.module.css";
-import Input from "../../../UI/Input/Input";
+import Input from "../../../UI/Input";
 import Button from "../../../UI/Button/Button";
 function TodoSearch({ setSearchText }) {
   return (
