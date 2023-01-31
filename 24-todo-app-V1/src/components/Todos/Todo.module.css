@@ -30,3 +30,9 @@
   border: none;
   color: red;
 }
+
+.todoIcon {
+  font-size: 1.8rem;
+  margin-right: 10px;
+  color: teal;
+}

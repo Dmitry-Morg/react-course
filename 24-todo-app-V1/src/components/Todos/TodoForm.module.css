@@ -22,7 +22,7 @@
   font-size: 1.5rem;
 }
 
-.todoFormContainer .button:hover {
+.todoFormContainer button:hover {
   background-color: rgb(240,240,155);
 }
 

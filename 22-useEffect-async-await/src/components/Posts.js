@@ -22,6 +22,12 @@ function Posts() {
     fetchData()
   }, []);
 
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => setTodo(json))
+  }, [])
+
   if (error) {
     return <h1>Error: {error}</h1>;
   }

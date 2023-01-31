@@ -15,7 +15,7 @@ function TodoForm({addTodo,resetTodos}) {
       <form onSubmit={onSubmitHandler}>
         <input value={text} placeholder="Enter task" onChange={(e) => setText(e.target.value)}/>
         <button type="submit">Submit</button>
-        <button type="button" onClick={resetTodos}>Reset</button>
+        {/* <button type="button" onClick={resetTodos}>Reset</button> */}
       </form>
     </div>
   )
